@@ -23,6 +23,9 @@ require("keymaps")   -- keymaps.lua
 -- プラグイン設定を読み込む
 require("lazy").setup("plugins")
 
+-- lspを読み込み
+require("lsp")
+
 -- カラースキーム
 vim.cmd.colorscheme("vim")
 
