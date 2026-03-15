@@ -1,3 +1,5 @@
+-- lua/plugins/lsp.lua
+-- mason.nvim nvim-lspconfig
 return {
   {
     "mason-org/mason.nvim",
