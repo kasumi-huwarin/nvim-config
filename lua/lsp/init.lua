@@ -8,7 +8,7 @@ require("lsp.lua_ls")
 require("lsp.pyright")
 
 -- Rust-analyzer用
-require("rust_analyzer")
+require("lsp.rust_analyzer")
 
 -- typescript-language-server用
-require("ts_ls")
+require("lsp.ts_ls")
