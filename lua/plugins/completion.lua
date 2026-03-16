@@ -11,9 +11,16 @@ return {
     },
     config = function()
       local cmp = require("cmp")
-      local max_height = math.floor(vim.o.lines * 0.4)  -- 画面の 40% の高さ
-      local max_width  = math.floor(vim.o.columns * 0.5) -- 画面の 50% の幅
       local luasnip = require("luasnip")
+      local max_height = math.floor(vim.o.lines * 0.4)
+      local max_width = math.floor(vim.o.columns * 0.5)
+      local window_opts = {
+        border = "rounded",
+        max_height = max_height,
+        max_width = max_width,
+        winhighlight = "Normal:Pmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+        scrollbar = false,
+      }
 
       cmp.setup({
         snippet = {
@@ -22,14 +29,10 @@ return {
           end,
         },
         window = {
-          completion = cmp.config.window.bordered({   
-            max_height = max_height, -- ドキュメントウィンドウの最大行数
-            max_width  = max_width, -- 最大幅
-          }),
-          documentation = cmp.config.window.bordered({
-            max_height = max_height, -- ドキュメントウィンドウの最大行数
-            max_width = max_width,  -- 最大幅
-          }),
+          completion = cmp.config.window.bordered(window_opts),
+          documentation = cmp.config.window.bordered(vim.tbl_extend("force", window_opts, {
+            winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,Search:None",
+          })),
         },
         mapping = {
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -69,4 +72,3 @@ return {
     end,
   },
 }
-
