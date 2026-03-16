@@ -1,3 +1,11 @@
 -- typescript-language-server(typescript/javascript)
-vim.lsp.config("ts_ls", {})
-vim.lsp.enable("ts_ls")
+local M = {}
+
+function M.setup(capabilities)
+  vim.lsp.config("ts_ls", {
+    capabilities = capabilities,
+  })
+  vim.lsp.enable("ts_ls")
+end
+
+return M
