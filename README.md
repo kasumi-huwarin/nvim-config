@@ -33,6 +33,8 @@ nvim
 - `<Tab>` / `<S-Tab>`: 補完メニュー移動
 - `<C-h/j/k/l>`: ウィンドウ移動
 - `<C-Right/Left>`: バッファ移動
+- `<leader>f`: formatter を手動実行
+- `<leader>l`: linter を手動実行
 - `:w` / `:q` などは Vim 標準
 
 ## カスタマイズ
@@ -67,7 +69,30 @@ cargo install --path .
 - インストール済みパーサー確認：`:TSInstallInfo`
 - 全パーサー更新：`:TSUpdate`
 
+## Formatter / Linter
+
+- formatter: `conform.nvim`
+- linter: `nvim-lint`
+- ツールの自動導入: `mason-tool-installer.nvim`
+
+起動時に Mason 経由で以下のツールを導入します。
+
+- `stylua`
+- `shfmt`
+- `prettier`
+- `clang-format`
+- `ruff`
+- `selene`
+- `shellcheck`
+- `eslint_d`
+- `cpplint`
+
+Rust の `rustfmt` は Mason ではなく rustup 側のコンポーネントです。
+
+```bash
+rustup component add rustfmt
+```
+
 ## ライセンス
 
 MIT
-

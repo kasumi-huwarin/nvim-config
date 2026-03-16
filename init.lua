@@ -16,35 +16,16 @@ end
 -- runtimepath に追加
 vim.opt.rtp:prepend(lazypath)
 
+-- Leader keys
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- 基本設定
 require("options")   -- options.lua
 require("keymaps")   -- keymaps.lua
 
+-- wslのクリップボード設定
+require("config.wsl_clipboard")
+
 -- プラグイン設定を読み込む
 require("lazy").setup("plugins")
-
--- カラースキーム
-vim.cmd.colorscheme("vim")
-
--- 補完のテーマ
-vim.api.nvim_set_hl(0, "Pmenu", { bg = "#2e2e2e", fg = "#ffffff" })      -- 補完メニュー全体
-vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#4b4b4b", fg = "#ffffff" })   -- 選択中
-vim.api.nvim_set_hl(0, "PmenuThumb", { bg = "#6c6c6c" })                -- optional: スクロールバー
-
--- wslを使う時で分岐
-if vim.fn.has("wsl") == 1 then
-  vim.g.clipboard = {
-    name = "win32yank-wsl",
-    copy = {
-      ["+"] = "win32yank.exe -i --crlf",
-      ["*"] = "win32yank.exe -i --crlf",
-    },
-    paste = {
-      ["+"] = "win32yank.exe -o --lf",
-      ["*"] = "win32yank.exe -o --lf",
-    },
-    cache_enabled = 0,
-  }
-end 
-vim.opt.clipboard = "unnamedplus"
-
