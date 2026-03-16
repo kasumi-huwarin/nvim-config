@@ -16,6 +16,10 @@ end
 -- runtimepath に追加
 vim.opt.rtp:prepend(lazypath)
 
+-- Leader keys
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- 基本設定
 require("options")   -- options.lua
 require("keymaps")   -- keymaps.lua
