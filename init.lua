@@ -24,8 +24,7 @@ vim.g.maplocalleader = " "
 require("options")   -- options.lua
 require("keymaps")   -- keymaps.lua
 
--- UIとクリップボード設定
-require("config.ui")
+-- wslのクリップボード設定
 require("config.wsl_clipboard")
 
 -- プラグイン設定を読み込む
