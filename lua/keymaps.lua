@@ -18,7 +18,9 @@ vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-
+vim.keymap.set("n", "<leader>e", function()
+	vim.diagnostic.open_float({ focus = true })
+end, opts)
 -- 補完
 vim.keymap.set("i", "<C-Space>", function()
 	require("cmp").complete()
