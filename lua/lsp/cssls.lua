@@ -2,10 +2,10 @@
 local M = {}
 
 function M.setup(capabilities)
-	vim.lsp.config("cssls", {
-		capabilities = capabilities,
-	})
-	vim.lsp.enable("cssls")
+  vim.lsp.config("cssls", {
+    capabilities = capabilities,
+  })
+  vim.lsp.enable("cssls")
 end
 
 return M

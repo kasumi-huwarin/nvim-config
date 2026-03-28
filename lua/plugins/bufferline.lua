@@ -7,7 +7,7 @@ return {
     require("bufferline").setup({
       options = {
         mode = "buffers",
-        numbers = "none",
+        numbers = "buffer_id",
         diagnostics = "nvim_lsp",
         separator_style = "slant",
         show_close_icon = false,
