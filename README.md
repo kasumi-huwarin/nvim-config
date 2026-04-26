@@ -65,7 +65,7 @@ Mason によって以下のツールが管理されます。
 ## インストール
 
 ```bash
-git clone https://github.com/kasumi-huwarin/nvim-config.git ~/.config/nvim
+git clone https://github.com/kouta-ochiai/nvim-config.git ~/.config/nvim
 ```
 
 ```bash
